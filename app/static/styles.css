@@ -1,0 +1,47 @@
+body { 
+    font-family: system-ui,
+    -apple-system, Segoe UI,
+    Roboto, Arial, sans-serif;
+    margin: 24px; 
+}
+
+header {
+     display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav { 
+    display: flex;
+    gap: 8px; 
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 8px; 
+}
+
+.btn:hover { 
+    background: #f6f6f6;
+}
+
+.mode { color: #666;
+    margin-left: auto;
+}
+
+table { width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th, td { border-bottom: 1px solid #eee;
+    padding: 8px 6px;
+    text-align: left;
+}
+
+th { 
+    background: #fafafa;
+}

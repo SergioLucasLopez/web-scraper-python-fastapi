@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HN Scraper</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>HN Scraper</h1>
+    <nav>
+      <a class="btn" href="/">Todo</a>
+      <a class="btn" href="/filter/long">&gt;5 palabras (por comentarios)</a>
+      <a class="btn" href="/filter/short">≤5 palabras (por puntos)</a>
+    </nav>
+    <span class="mode">Modo: {{ mode }}</span>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Título</th>
+          <th>Puntos</th>
+          <th>Comentarios</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in entries %}
+        <tr>
+          <td>{{ e.rank }}</td>
+          <td>{{ e.title }}</td>
+          <td>{{ e.points }}</td>
+          <td>{{ e.comments }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>FastAPI · <a href="/api/entries">API JSON</a></p>
+  </footer>
+</body>
+</html>

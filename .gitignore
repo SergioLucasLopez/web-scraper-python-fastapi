@@ -1,0 +1,26 @@
+# borra el que está dentro de app si existe
+Remove-Item .\app\.gitignore -ErrorAction SilentlyContinue
+
+# crea .gitignore en la RAÍZ
+New-Item -Path .gitignore -ItemType File -Force
+
+# escribe el contenido recomendado
+@'
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.log
+
+# Envs
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+'@ | Set-Content -Encoding UTF8 .gitignore

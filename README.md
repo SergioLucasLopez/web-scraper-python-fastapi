@@ -40,8 +40,6 @@ Docs OpenAPI: http://127.0.0.1:8000/docs
 
 Si el puerto 8000 está ocupado:
 
-powershell
-Copiar código
 uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
 Endpoints
 / – Listado completo (30 primeras entradas por rank).
@@ -54,8 +52,6 @@ Endpoints
 
 Ejemplo de respuesta (/api/entries):
 
-json
-Copiar código
 [
   {"rank": 1, "title": "RFC 9839 and Bad Unicode", "points": 100, "comments": 31},
   {"rank": 2, "title": "Manim: Animation engine for explanatory math videos", "points": 218, "comments": 42}
@@ -74,8 +70,7 @@ Cada token se normaliza a solo letras (isalpha()), descartando símbolos/puntuac
 Implementación en app/wordutils.py.
 
 Arquitectura
-bash
-Copiar código
+
 app/
   main.py            # FastAPI + rutas HTML/API
   hn_scraper.py      # scraping + caché (TTL 120 s)
@@ -93,8 +88,6 @@ Ordenaciones: estables y con desempates (rank como último criterio).
 Tests (recomendados)
 Tras añadir la carpeta tests/:
 
-powershell
-Copiar código
 pytest -q
 Cobertura sugerida:
 
